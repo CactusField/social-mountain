@@ -44,8 +44,8 @@ export default class Post extends Component {
 
   // This hides the drop-down when the post is clicked anywhere
   hideMasterMenu() {
-    if ( this.state.showMasterMenu === true ) {
-      this.setState({ showMasterMenu: false });
+    if (this.state.showMasterMenu === true) {
+      this.setState({showMasterMenu: false});
     }
   }
 
@@ -53,19 +53,19 @@ export default class Post extends Component {
     // This is destructuring! You can also think of it as being written as so:
       // const editing = this.state.editing
       // const showMasterMenu = this.state.showMasterMenu
-    const { editing, showMasterMenu } = this.state;
+    const {editing, showMasterMenu} = this.state;
     const {text, date} = this.props;
     return (
       // Main body of post
-      <section className="Post__parent" onClick={ this.hideMasterMenu }>
+      <section className="Post__parent" onClick={this.hideMasterMenu}>
 
         {/* Three dots in top right corner */}
         <div className="Post__master-controls">
           <MasterControlIcon onClick={ this.toggleMasterMenu } />
 
           {/* Drop-down menu. Remember that the "showMasterMenu" variable has been destructured off of this.state */}
-          <div className="Post__master-menu" style={ { display: showMasterMenu ? 'flex' : 'none' } }>
-            <span onClick={ this.showEdit }>Edit</span>
+          <div className="Post__master-menu" style={{display: showMasterMenu ? 'flex' : 'none' } }>
+            <span onClick={this.showEdit }>Edit</span>
             <span onClick={() => this.props.deletePostFn(this.props.id)}>Delete</span>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default class Post extends Component {
             ?
               <Edit text={text}
                     id = {this.props.id}
-                    hideEdit={ this.hideEdit }
+                    hideEdit={this.hideEdit}
                     updatePostfn={this.props.updatePostFn} />
             :
               <span className="Post__text">{text}</span>

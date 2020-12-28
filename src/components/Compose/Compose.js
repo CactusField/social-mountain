@@ -13,11 +13,11 @@ export default class Compose extends Component {
       text: ''
     };
 
-    this.createPost = this.createPost.bind( this );
+    this.createPost = this.createPost.bind(this);
   }
 
-  updateText( text ) {
-    this.setState({ text });
+  updateText(text) {
+    this.setState({text});
   }
 
   createPost() {
@@ -30,7 +30,7 @@ export default class Compose extends Component {
 
   render() {
     // Destructuring
-    const { text } = this.state;
+    const {text} = this.state;
 
     return (
       <section className="Compose__parent">
@@ -43,13 +43,13 @@ export default class Compose extends Component {
           {/* This is where you type the message for your new post */}
           <input className="Compose__input"
                  placeholder="What's on your mind?"
-                 value={ text }
-                 onChange={ ( e ) => this.updateText( e.target.value ) } />
+                 value={text}
+                 onChange={(e) => this.updateText(e.target.value)} />
 
         </div>
 
         <div className="Compose__bottom">
-          <button onClick={ this.createPost }>Compose</button>
+          <button onClick={this.createPost}>Compose</button>
         </div>
       </section>
     )

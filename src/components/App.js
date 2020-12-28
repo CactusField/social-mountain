@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const {posts} = this.state;
 
     return (
       <div className="App__parent">
